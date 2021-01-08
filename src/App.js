@@ -3,25 +3,16 @@ import './App.css';
 import MovieHeader from './components/MovieHeader'
 
 const App = () => {
-  const [color, setColor] = useState("red")
 
   const main_movie = {
     title: "Avengers",
-    type: "Film"
-  }
-
-  const toggleColor = () => {
-    if(color === 'red'){
-      setColor("blue")
-    }else{
-      setColor('red')
-    }
+    type: "Film",
+    image: "https://wallpaperaccess.com/full/329583.jpg"
   }
 
   return (
-    <div className="App">
-      <MovieHeader movie={main_movie} color={color} />
-      <input type="text" onChange={e => setColor(e.target.value)} value={color} />
+    <div>
+      <MovieHeader movie={main_movie} />
     </div>
   );
 }

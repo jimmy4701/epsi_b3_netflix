@@ -1,23 +1,26 @@
-import React, {Fragment, useEffect} from 'react'
+import React, {useMemo} from 'react'
+import Button from '../components/Button'
 
-const MovieHeader = ({movie, color}) => {
+const MovieHeader = ({movie}) => {
 
-    const initialize = () => {
-        console.log(color === "red" ? "Good color" : "Bad Color")
-    }
-
-    useEffect(initialize, [color])
+    const style = useMemo(() => {
+        return {
+            backgroundImage: `url(${movie.image})`
+        }
+    }, [movie])
 
     return(
-        <Fragment>
-            {color === "red" ?
-                <p>La couleur est rouge</p>
-            :
-                <p>La couleur n'est pas valide</p>
-            }
-
-            {movie && <h1>{movie.title}</h1>}
-        </Fragment>
+        <div className="movie-header" style={style}>
+            <div className="type-container">
+                <img src="https://image.flaticon.com/icons/png/512/870/870910.png" />
+                <div>{movie.type}</div>
+            </div>
+            <h1 className="movie-title">{movie.title}</h1>
+            <div className="buttons-container">
+                <Button onClick={() => alert("Lecture")}>Lecture</Button>
+                <Button clear>Plus d'info</Button>
+            </div>
+        </div>
     )
 }
 
