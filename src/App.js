@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <MovieHeader movie={main_movie} color={color} />
-      <button onClick={toggleColor}>Changer la couleur</button>
+      <input type="text" onChange={e => setColor(e.target.value)} value={color} />
     </div>
   );
 }
