@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import './App.css';
 import MovieHeader from './components/MovieHeader'
+import CategoryDisplayer from './components/CategoryDisplayer'
+import categories from './categories.json'
 
 const App = () => {
 
@@ -13,6 +15,7 @@ const App = () => {
   return (
     <div>
       <MovieHeader movie={main_movie} />
+      {categories.map(cat => <CategoryDisplayer category={cat} />)}
     </div>
   );
 }

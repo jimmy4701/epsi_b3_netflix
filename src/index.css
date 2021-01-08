@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 200vh;
 }
 
 code {
@@ -69,4 +70,12 @@ button.clear {
 button:hover {
   background-color: rgb(185, 185, 185);
   transition: all 0.5s;
+}
+
+.movie {
+  height: 15em;
+  width: 25em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
