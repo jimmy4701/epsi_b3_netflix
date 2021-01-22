@@ -1,5 +1,6 @@
-import React, {useMemo} from 'react'
+import React, {useMemo, useContext} from 'react'
 import Button from '../components/Button'
+import UserContext from '../contexts/UserContext'
 
 const MovieHeader = ({movie}) => {
 
@@ -8,6 +9,8 @@ const MovieHeader = ({movie}) => {
             backgroundImage: `url(${movie.image})`
         }
     }, [movie])
+
+    const {user} = useContext(UserContext)
 
     return(
         <div className="movie-header" style={style}>
@@ -19,6 +22,7 @@ const MovieHeader = ({movie}) => {
             <div className="buttons-container">
                 <Button onClick={() => alert("Lecture")}>Lecture</Button>
                 <Button clear>Plus d'info</Button>
+                {user && <Button>Ajouter aux favoris de {user.username}</Button>}
             </div>
         </div>
     )

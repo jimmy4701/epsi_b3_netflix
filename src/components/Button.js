@@ -3,7 +3,7 @@ import React from 'react'
 const Button = ({clear, ...props}) => {
 
     return(
-        <button {...props} className={clear && "clear"}>
+        <button className={clear && "clear"}  {...props} >
             {props.children}
         </button>
     )
