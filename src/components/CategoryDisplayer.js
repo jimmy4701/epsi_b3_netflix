@@ -1,16 +1,28 @@
 import React from 'react'
 import Movie from './Movie'
+import styled from 'styled-components'
 
 const CategoryDisplayer = ({category}) => {
 
    return(
-       <div>
-           <h3>{category.name}</h3>
-           <div className="movies-container">
+       <MainContainer>
+           <Title>{category.name}</Title>
+           <MoviesContainer>
                {category.movies.map(movie => <Movie movie={movie} />)}
-           </div>
-       </div>
+           </MoviesContainer>
+       </MainContainer>
    )
 }
+
+const MainContainer = styled.div``
+
+const Title = styled.h3`
+    color: white;
+    font-size: 2em;
+`
+
+const MoviesContainer = styled.div`
+    display: flex;
+`
 
 export default CategoryDisplayer
