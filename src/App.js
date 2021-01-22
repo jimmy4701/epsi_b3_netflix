@@ -1,22 +1,21 @@
 import React, {useState} from 'react'
 import './App.css';
-import MovieHeader from './components/MovieHeader'
-import CategoryDisplayer from './components/CategoryDisplayer'
-import categories from './categories.json'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Landing from './pages/Landing'
+
+import Navbar from './components/Navbar'
 
 const App = () => {
 
-  const main_movie = {
-    title: "Avengers",
-    type: "Film",
-    image: "https://wallpaperaccess.com/full/329583.jpg"
-  }
-
   return (
-    <div>
-      <MovieHeader movie={main_movie} />
-      {categories.map(cat => <CategoryDisplayer category={cat} />)}
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/home" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 

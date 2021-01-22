@@ -6,9 +6,15 @@ const Movie = ({movie}) => {
 
    return(
        <MainContainer image={movie.image}>
-           <NetflixLogo src="https://image.flaticon.com/icons/png/512/870/870910.png" />
-           <Top>TOP<br/><span>10</span></Top>
-           <NewEpisodes>Nouveaux épisodes</NewEpisodes>
+           {movie.netflix &&
+            <NetflixLogo src="https://image.flaticon.com/icons/png/512/870/870910.png" />
+           }
+           {movie.top &&
+            <Top>TOP<br/><span>10</span></Top>
+           }
+           {movie.new_episodes &&
+            <NewEpisodes>Nouveaux épisodes</NewEpisodes>
+           }
        </MainContainer>
    )
 }

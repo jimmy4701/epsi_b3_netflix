@@ -5,11 +5,15 @@
             {
                 "title": "Le seigneur des anneaux",
                 "type": "Série",
+                "new_episodes": true,
+                "netflix": true,
+                "top": true,
                 "image": "https://static.fnac-static.com/multimedia/Images/FD/Comete/123445/CCP_IMG_ORIGINAL/1608701.jpg"
             },
             {
                 "title": "Star Wars - Episode IV",
                 "type": "Film",
+                "top": true,
                 "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
             },
             {
@@ -29,6 +33,8 @@
             },
             {
                 "title": "John Wick",
+                "new_episodes": true,
+                "netflix": true,
                 "type": "Film",
                 "image": "https://www.rollingstone.fr/RS-WP-magazine/wp-content/uploads/2019/05/john-wick-.jpg"
             }

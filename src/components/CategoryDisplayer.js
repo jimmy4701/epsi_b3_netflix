@@ -22,7 +22,7 @@ const Title = styled.h3`
 `
 
 const MoviesContainer = styled.div`
-    display: flex;
+    display: inline-flex; 
 `
 
 export default CategoryDisplayer
