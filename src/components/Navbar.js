@@ -1,21 +1,18 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import Modal from './Modal'
 import UserContext from '../contexts/UserContext'
+import SigninForm from './SigninForm'
 
 const Navbar = (props) => {
+    const [modal, setModal] = useState(false)
 
     const {user, setUser} = useContext(UserContext)
 
     const logout = () => {
         setUser(false)
-    }
-
-    const login = () => {
-        setUser({
-            username: "Bob"
-        })
     }
 
     return(
@@ -34,10 +31,20 @@ const Navbar = (props) => {
             <RightContainer>
                 {user ?
                     <CustomLink to="/" onClick={logout}>Se déconnecter ({user.username})</CustomLink>
+                // :
+                //     <CustomLink to="/login">
+                //         <CustomButton >S'identifier</CustomButton>
+                //     </CustomLink>
+                // }
                 :
-                    <CustomButton to="/home" onClick={login}>S'identifier</CustomButton>
+                        <CustomButton onClick={() => setModal(true)} >S'identifier</CustomButton>
                 }
             </RightContainer>
+            {modal &&
+                <Modal>
+                    <SigninForm onLogin={() => setModal(false)}/>
+                </Modal>
+            }
         </MainContainer>
     )
 }
