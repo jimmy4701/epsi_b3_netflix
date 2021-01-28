@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import Button from '../components/Button'
 
 const Landing = () => {
 
@@ -9,6 +11,9 @@ const Landing = () => {
         <h1>Films, séries TV, et bien plus<br/>en illimité.</h1>
         <h3>Où que vous soyez. Annulez à tout moment.</h3>
         <p>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</p>
+        <Link to="/login">
+          <Button>Se connecter</Button>
+        </Link>
       </Header>
     </MainContainer>
   );

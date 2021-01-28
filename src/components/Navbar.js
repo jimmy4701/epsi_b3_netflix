@@ -18,7 +18,9 @@ const Navbar = (props) => {
     return(
         <MainContainer user={user}>
             <LeftContainer>
-                <NetflixLogo src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"/>
+                <CustomLink to="/">
+                    <NetflixLogo src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"/>
+                </CustomLink>
                 {user &&
                     <>
                         <CustomLink to="/home">Accueil</CustomLink>
@@ -79,6 +81,7 @@ const CustomLink = styled(Link)`
     color: white;
     text-decoration: none;
     margin-right: 1em;
+    height: inherit;
 `
 
 const LeftContainer = styled.div`
